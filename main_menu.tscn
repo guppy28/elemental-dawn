@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://b5ji3dmfu1qnt"]
+[gd_scene load_steps=2 format=3 uid="uid://b5ji3dmfu1qnt"]
+
+[ext_resource type="Texture2D" uid="uid://d3l20q783x0ro" path="res://Elemental Dawn Logo v1.png" id="1_kyw4e"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -7,3 +9,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 497.0
+offset_top = 156.0
+offset_right = 666.231
+offset_bottom = 196.0
+texture = ExtResource("1_kyw4e")
+expand_mode = 3
