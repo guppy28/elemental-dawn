@@ -1,20 +1,114 @@
-[gd_scene load_steps=2 format=3 uid="uid://b5ji3dmfu1qnt"]
+[gd_scene load_steps=3 format=3 uid="uid://b5ji3dmfu1qnt"]
 
+[ext_resource type="Script" path="res://main_menu.gd" id="1_a0rsj"]
 [ext_resource type="Texture2D" uid="uid://d3l20q783x0ro" path="res://Elemental Dawn Logo v1.png" id="1_kyw4e"]
 
-[node name="Control" type="Control"]
+[node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_a0rsj")
 
-[node name="TextureRect" type="TextureRect" parent="."]
+[node name="Logo" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 497.0
-offset_top = 156.0
-offset_right = 666.231
-offset_bottom = 196.0
+offset_left = 350.0
+offset_top = 108.0
+offset_right = 519.231
+offset_bottom = 148.0
+scale = Vector2(3, 3)
 texture = ExtResource("1_kyw4e")
 expand_mode = 3
+
+[node name="NameLine" type="LineEdit" parent="."]
+layout_mode = 2
+offset_left = 188.0
+offset_top = 318.0
+offset_right = 327.0
+offset_bottom = 349.0
+placeholder_text = "enter name here"
+expand_to_text_length = true
+
+[node name="AddressLine" type="LineEdit" parent="."]
+layout_mode = 2
+offset_left = 511.0
+offset_top = 318.0
+offset_right = 650.0
+offset_bottom = 349.0
+text = "127.0.0.1"
+placeholder_text = "default: 127.0.0.1"
+expand_to_text_length = true
+
+[node name="NameLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 129.0
+offset_top = 322.0
+offset_right = 180.0
+offset_bottom = 345.0
+text = "Name:"
+
+[node name="AddressLabel" type="Label" parent="."]
+layout_mode = 2
+offset_left = 431.0
+offset_top = 322.0
+offset_right = 482.0
+offset_bottom = 345.0
+text = "Address:"
+
+[node name="TagLineLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 464.0
+offset_top = 243.0
+offset_right = 595.0
+offset_bottom = 266.0
+text = "Prove your skills!"
+
+[node name="ClassLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 167.0
+offset_top = 446.0
+offset_right = 298.0
+offset_bottom = 469.0
+text = "Class:"
+
+[node name="HostButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 747.0
+offset_top = 320.0
+offset_right = 791.0
+offset_bottom = 351.0
+text = "Host"
+
+[node name="JoinButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 889.0
+offset_top = 322.0
+offset_right = 927.0
+offset_bottom = 353.0
+text = "Join"
+
+[node name="OptionButton" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 235.0
+offset_top = 446.0
+offset_right = 372.0
+offset_bottom = 477.0
+item_count = 2
+popup/item_0/text = "Guardian"
+popup/item_0/id = 0
+popup/item_1/text = "Legionnaire"
+popup/item_1/id = 1
+
+[node name="ClassDescription" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 547.0
+offset_top = 464.0
+offset_right = 587.0
+offset_bottom = 504.0
+text = "class descriptio"
+fit_content = true
+
+[connection signal="pressed" from="HostButton" to="." method="_on_host_button_pressed"]
+[connection signal="pressed" from="JoinButton" to="." method="_on_join_button_pressed"]

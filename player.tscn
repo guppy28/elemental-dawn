@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://d0oggmff6d0qn"]
+
+[ext_resource type="Script" path="res://player.gd" id="1_1027e"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6bxey"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_l8fsc"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_1027e")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("SphereShape3D_6bxey")
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_l8fsc")
