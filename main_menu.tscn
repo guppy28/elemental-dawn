@@ -97,7 +97,6 @@ offset_right = 372.0
 offset_bottom = 477.0
 item_count = 2
 popup/item_0/text = "Guardian"
-popup/item_0/id = 0
 popup/item_1/text = "Legionnaire"
 popup/item_1/id = 1
 

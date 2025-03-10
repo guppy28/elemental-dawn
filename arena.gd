@@ -207,4 +207,3 @@ func _on_join_pressed():
 func _on_find_public_ip_pressed():
 	OS.shell_open("https://icanhazip.com/")
 """
-
