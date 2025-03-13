@@ -13,7 +13,7 @@ grow_vertical = 2
 script = ExtResource("1_a0rsj")
 
 [node name="Logo" type="TextureRect" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 350.0
 offset_top = 108.0
 offset_right = 519.231
@@ -53,12 +53,12 @@ text = "Name:"
 layout_mode = 2
 offset_left = 431.0
 offset_top = 322.0
-offset_right = 482.0
+offset_right = 498.0
 offset_bottom = 345.0
 text = "Address:"
 
 [node name="TagLineLabel" type="Label" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 464.0
 offset_top = 243.0
 offset_right = 595.0
@@ -66,7 +66,7 @@ offset_bottom = 266.0
 text = "Prove your skills!"
 
 [node name="ClassLabel" type="Label" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 167.0
 offset_top = 446.0
 offset_right = 298.0
@@ -74,7 +74,7 @@ offset_bottom = 469.0
 text = "Class:"
 
 [node name="HostButton" type="Button" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 747.0
 offset_top = 320.0
 offset_right = 791.0
@@ -82,7 +82,7 @@ offset_bottom = 351.0
 text = "Host"
 
 [node name="JoinButton" type="Button" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 889.0
 offset_top = 322.0
 offset_right = 927.0
@@ -90,7 +90,7 @@ offset_bottom = 353.0
 text = "Join"
 
 [node name="OptionButton" type="OptionButton" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 235.0
 offset_top = 446.0
 offset_right = 372.0
@@ -101,11 +101,11 @@ popup/item_1/text = "Legionnaire"
 popup/item_1/id = 1
 
 [node name="ClassDescription" type="RichTextLabel" parent="."]
-layout_mode = 0
+layout_mode = 2
 offset_left = 547.0
 offset_top = 464.0
 offset_right = 587.0
-offset_bottom = 504.0
+offset_bottom = 579.0
 text = "class descriptio"
 fit_content = true
 
