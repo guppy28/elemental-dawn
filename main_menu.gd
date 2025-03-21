@@ -4,8 +4,9 @@ signal player_connected(peer_id, player_info)
 signal player_disconnected(peer_id)
 signal server_disconnected
 
-const DEFAULT_SERVER_IP = "127.0.0.1" # IPv4 localhost
-const MAX_CONNECTIONS = 20
+const DEFAULT_SERVER_IP = "127.0.0.1"
+const PORT = 2828
+const MAX_CONNECTIONS = 10
 
 # This will contain player info for every player,
 # with the keys being each player's unique IDs.
@@ -15,10 +16,9 @@ var players = {}
 # before the connection is made. It will be passed to every other peer.
 # For example, the value of "name" can be set to something the player
 # entered in a UI scene.
-var player_info = {"name": "Name"}
+var player_info = {}
 
 var players_loaded = 0
-const PORT = 2828
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -30,18 +30,12 @@ func _ready():
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func _on_host_button_pressed():
 	var peer = ENetMultiplayerPeer.new()
 	var error = peer.create_server(PORT, MAX_CONNECTIONS)
 	if error:
 		return error
 	multiplayer.multiplayer_peer = peer
-
 	players[1] = player_info
 	player_connected.emit(1, player_info)
 
