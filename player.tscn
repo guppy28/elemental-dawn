@@ -25,4 +25,5 @@ shape = SubResource("SphereShape3D_6bxey")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+root_path = NodePath("../CharacterBody3D")
 replication_config = SubResource("SceneReplicationConfig_l8fsc")
