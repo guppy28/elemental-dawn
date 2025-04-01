@@ -16,7 +16,7 @@ var players = {}
 # before the connection is made. It will be passed to every other peer.
 # For example, the value of "name" can be set to something the player
 # entered in a UI scene.
-var player_info = {}
+var player_info = {"Name" : "", "Class" : ""}
 
 var players_loaded = 0
 
@@ -40,7 +40,6 @@ func join_game(address):
 	player_connected.emit(1, player_info)
 
 func host_game(address):
-	var address = $AddressLine.get_text()
 	if address.is_empty():
 		address = DEFAULT_SERVER_IP
 	var peer = ENetMultiplayerPeer.new()
@@ -52,7 +51,6 @@ func host_game(address):
 
 func remove_multiplayer_peer():
 	multiplayer.multiplayer_peer = null
-
 
 # When the server decides to start the game from a UI scene,
 # do Lobby.load_game.rpc(filepath)

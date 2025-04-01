@@ -1,8 +1,8 @@
 extends Node3D # Or Node2D.
 
 var peer = ENetMultiplayerPeer.new()
-@export var player_scene : PackedScene
-
+"""@export var player_scene : PackedScene"""
+"""
 func _on_host_button_pressed():
 	peer.create_server(2828)
 	multiplayer.multiplayer_peer = peer
@@ -31,7 +31,7 @@ func _del_player(id):
 
 func exit_game(id):
 	multiplayer.peer_disconnected.connect(del_player)
-	
+"""
 """
 func remove_multiplayer_peer():
 	multiplayer.multiplayer_peer = null

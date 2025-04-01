@@ -24,3 +24,12 @@ offset_left = 229.0
 offset_top = 215.0
 offset_right = 269.0
 offset_bottom = 255.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 480.0
+offset_top = 229.0
+offset_right = 758.0
+offset_bottom = 402.0
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

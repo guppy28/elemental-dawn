@@ -1,11 +1,11 @@
-extends Node3D
+extends CharacterBody3D
 
-@onready var cam = $CharacterBody3D/Camera3D
-
+@onready var cam = $Camera3D
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
-var speed = 4
-var jump
-var velocity = 0;
+var speed = 4.0  # movement speed
+var jump_speed = 6.0  # determines jump height
+var mouse_sensitivity = 0.002  # turning speed
+
 
 func _enter_tree():
 	set_multiplayer_authority(name.to_int())
@@ -14,11 +14,17 @@ func _enter_tree():
 func _ready():
 	cam = is_multiplayer_authority()
 
-func get_input():
-	var input_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = input_dir * speed
+func _unhandled_input(event):
+	if event is InputEventMouseMotion:
+		rotate_y(-event.relative.x * mouse_sensitivity)
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
+func get_input():
+	var input = Input.get_vector("left", "right", "forward", "backward")
+	velocity.x = input.x * speed
+	velocity.z = input.y * speed
+
 func _physics_process(delta):
+	if not is_on_floor():
+		velocity.y += -gravity * delta
 	get_input()
-	move_and_collide(velocity * delta)
+	move_and_slide()
