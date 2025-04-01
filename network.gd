@@ -1,18 +1,4 @@
-extends Control
-
-
-
-func _on_host_button_pressed():
-	$AddressLine.get_text()
-
-
-func _on_join_button_pressed():
-	$AddressLine.get_text()
-
-
-
-"""
-extends Control
+extends Node
 
 signal player_connected(peer_id, player_info)
 signal player_disconnected(peer_id)
@@ -44,7 +30,7 @@ func _ready():
 	multiplayer.server_disconnected.connect(_on_server_disconnected)
 
 
-func _on_host_button_pressed():
+func join_game(address):
 	var peer = ENetMultiplayerPeer.new()
 	var error = peer.create_server(PORT, MAX_CONNECTIONS)
 	if error:
@@ -53,7 +39,7 @@ func _on_host_button_pressed():
 	players[1] = player_info
 	player_connected.emit(1, player_info)
 
-func _on_join_button_pressed():
+func host_game(address):
 	var address = $AddressLine.get_text()
 	if address.is_empty():
 		address = DEFAULT_SERVER_IP
@@ -117,10 +103,6 @@ func _on_server_disconnected():
 	multiplayer.multiplayer_peer = null
 	players.clear()
 	server_disconnected.emit()
-"""
-
-
-
 
 # Default game server port. Can be any number between 1024 and 49151.
 # Not present on the list of registered or common ports as of December 2022:
