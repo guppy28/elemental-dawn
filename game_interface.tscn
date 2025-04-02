@@ -1,0 +1,98 @@
+[gd_scene format=3 uid="uid://c1p18ed418tus"]
+
+[node name="GameInterface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SHIFT" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 250.0
+offset_top = 530.0
+offset_right = 330.0
+offset_bottom = 610.0
+editor_only = false
+metadata/_edit_group_ = true
+
+[node name="HotkeyLabel" type="Label" parent="SHIFT"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 80.0
+offset_bottom = 103.0
+text = "[SHIFT]"
+horizontal_alignment = 1
+
+[node name="AbilityIcon" type="TextureRect" parent="SHIFT"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+
+[node name="Q" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 450.0
+offset_top = 530.0
+offset_right = 530.0
+offset_bottom = 610.0
+border_color = Color(0, 1, 0, 1)
+editor_only = false
+metadata/_edit_group_ = true
+
+[node name="HotkeyLabel" type="Label" parent="Q"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 80.0
+offset_bottom = 103.0
+text = "[Q]"
+horizontal_alignment = 1
+
+[node name="AbilityIcon" type="TextureRect" parent="Q"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+
+[node name="E" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 650.0
+offset_top = 530.0
+offset_right = 730.0
+offset_bottom = 610.0
+editor_only = false
+metadata/_edit_group_ = true
+
+[node name="HotkeyLabel" type="Label" parent="E"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 80.0
+offset_bottom = 103.0
+text = "[E]"
+horizontal_alignment = 1
+
+[node name="AbilityIcon" type="TextureRect" parent="E"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
+
+[node name="R" type="ReferenceRect" parent="."]
+layout_mode = 0
+offset_left = 850.0
+offset_top = 530.0
+offset_right = 930.0
+offset_bottom = 610.0
+editor_only = false
+metadata/_edit_group_ = true
+
+[node name="HotkeyLabel" type="Label" parent="R"]
+layout_mode = 0
+offset_top = 80.0
+offset_right = 80.0
+offset_bottom = 103.0
+text = "[R]"
+horizontal_alignment = 1
+
+[node name="AbilityIcon" type="TextureRect" parent="R"]
+layout_mode = 0
+offset_right = 80.0
+offset_bottom = 80.0
