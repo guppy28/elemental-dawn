@@ -31,7 +31,6 @@ metadata/_editor_floor_ = Vector3(0, -1, 0)
 shape = SubResource("BoxShape3D_236e8")
 
 [node name="MultiplayerSpawner" type="MultiplayerSpawner" parent="."]
-_spawnable_scenes = PackedStringArray("res://main_menu.tscn")
 spawn_path = NodePath("..")
 
 [node name="Player" parent="." instance=ExtResource("3_iroyt")]

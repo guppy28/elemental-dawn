@@ -1,0 +1,63 @@
+[gd_scene load_steps=3 format=3 uid="uid://cf1qykkmhimvj"]
+
+[ext_resource type="Script" path="res://menus/lobby.gd" id="1_37ktl"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_kyihc"]
+properties/0/path = NodePath("RedTeamList:clip_contents")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath("BlueTeamList:clip_contents")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_37ktl")
+
+[node name="RedTeamList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 21.0
+offset_top = 17.0
+offset_right = 342.0
+offset_bottom = 379.0
+max_text_lines = 3
+
+[node name="BlueTeamList" type="ItemList" parent="."]
+layout_mode = 0
+offset_left = 399.0
+offset_top = 45.0
+offset_right = 739.0
+offset_bottom = 380.0
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 800.0
+offset_top = 62.0
+offset_right = 1078.0
+offset_bottom = 235.0
+
+[node name="RedTeamJoinButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 82.0
+offset_top = 489.0
+offset_right = 303.0
+offset_bottom = 602.0
+
+[node name="BlueTeamJoinButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = 394.0
+offset_top = 503.0
+offset_right = 575.0
+offset_bottom = 600.0
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+replication_config = SubResource("SceneReplicationConfig_kyihc")
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="RedTeamJoinButton" to="." method="_on_red_team_join_button_pressed"]
+[connection signal="pressed" from="BlueTeamJoinButton" to="." method="_on_blue_team_join_button_pressed"]
