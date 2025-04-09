@@ -1,6 +1,9 @@
 extends Node3D # Or Node2D.
 
 var peer = ENetMultiplayerPeer.new()
+
+
+
 """@export var player_scene : PackedScene"""
 """
 func _on_host_button_pressed():

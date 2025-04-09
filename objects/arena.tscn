@@ -1,8 +1,8 @@
 [gd_scene load_steps=8 format=3 uid="uid://q4jbcnl42vqd"]
 
-[ext_resource type="Script" path="res://arena.gd" id="1_v8yw4"]
+[ext_resource type="Script" path="res://objects/arena.gd" id="1_v8yw4"]
 [ext_resource type="MeshLibrary" uid="uid://bpgusitjto7ai" path="res://xd.tres" id="2_6tism"]
-[ext_resource type="PackedScene" uid="uid://d0oggmff6d0qn" path="res://player.tscn" id="3_iroyt"]
+[ext_resource type="PackedScene" uid="uid://d0oggmff6d0qn" path="res://players/player.tscn" id="3_iroyt"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3je8o"]
 
